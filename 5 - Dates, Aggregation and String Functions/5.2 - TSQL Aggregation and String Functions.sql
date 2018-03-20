@@ -1,0 +1,71 @@
+--MYSALARY
+
+--AGGREGATE FUNCTIONS
+
+USE AdventureWorks2017
+
+SELECT * FROM MySalary
+
+--AVERAGE OF VALUES
+SELECT AVG(Salary) FROM MySalary
+
+--COUNTS THE NO OF ROWS
+SELECT COUNT(Salary) FROM MySalary
+
+SELECT * FROM MySalary
+
+--ADDS UP SALARIES
+SELECT SUM(Salary) FROM MySalary
+
+--MINIMUM SALARY
+SELECT MIN(Salary) FROM MySalary
+
+--MAXIMUM SALARY
+SELECT MAX(Salary) FROM MySalary
+
+--MYORDER 
+SELECT * FROM MyOrder
+
+--CONCATENATING STRINGS
+PRINT CONCAT('String 1', 'String 2')
+
+SELECT OrderNo, OrderName, CONCAT(OrderName, ' ', RAND()) AS ConcatenatedForm
+FROM MyOrder
+
+--PORTION OF A STRING, LEFT FUNCTION
+SELECT OrderNo, OrderName, LEFT(OrderName, 5) FROM MyOrder
+
+--PORTION OF A STRING, RIGHT FUNCTION
+SELECT OrderNo, OrderName, RIGHT(OrderName, 5) FROM MyOrder
+
+--PORTION OF A STRING, SUBSTRING FUNCTION
+SELECT OrderNo, OrderName, SUBSTRING(OrderName, 2, 5) FROM MyOrder
+
+--LOWERCASE
+SELECT OrderNo, OrderName, LOWER(OrderName) FROM MyOrder
+
+--UPPERCASE
+SELECT OrderNo, OrderName, UPPER(OrderName) FROM MyOrder
+
+--LENGTH
+SELECT OrderNo, OrderName, LEN(OrderName) From MyOrder
+
+--DISPLAY FIRST LETTER UPPERCASE AND REST LOWER CASE
+SELECT OrderNo, OrderName,
+CONCAT(
+UPPER(LEFT(OrderName, 1)),
+LOWER(SUBSTRING(OrderName, 2, LEN(OrderName)))
+)
+FROM MyOrder
+
+--TRIM
+SELECT '    Mytext    '
+SELECT LEN('    Mytext    ')
+
+--LTRIM
+SELECT LTRIM('    Mytext    ')
+
+--RTRIM
+SELECT RTRIM('    Mytext    ')
+
+SELECT LTRIM(RTRIM(('    Mytext    ')))
